@@ -1,0 +1,25 @@
+
+public class DefangingAnIPAddress {
+	
+	
+	
+	public static String defangIPaddree(String address) {
+		String [] parts = address.split("\\.");
+		
+		StringBuilder result = new StringBuilder();
+		for (String part : parts) {
+		result.append(part);
+		//System.out.println(part);
+		if(part != parts[parts.length-1]) {
+		result.append("[.]");
+		
+		}
+		}
+		return result.toString();
+	}
+
+	public static void main(String[] args) {
+		 System.out.println(defangIPaddree("1.1.1.1"));
+	}
+
+}
