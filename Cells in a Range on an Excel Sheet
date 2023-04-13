@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class DefangingAnIPAddress {
+
+	public static List<String> cellsInRange(String s) {
+		List<String> str = new ArrayList<>();
+		final char startCol = s.charAt(0);
+		final char endCol = s.charAt(3);
+		final char startrow = s.charAt(1);
+		final char endrow = s.charAt(4);
+		for (char col = startCol; col <= endCol; ++col)
+			for (char row = startrow; row <= endrow; ++row)
+				str.add("" + col + row);
+
+		System.out.println(str);
+		return str;
+	}
+
+	public static void main(String[] args) {
+
+		String s = "K1:L2";
+		cellsInRange(s);
+	}
+
+}
