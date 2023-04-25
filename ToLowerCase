@@ -1,0 +1,38 @@
+
+
+
+/*Logic used -
+The uppercase letters from 'A' to 'Z' have ASCII codes between 65 and 90.
+The uppercase letters from 'a' to 'z' have ASCII codes between 97 and 122.
+The difference between the lower case and upper case ascii value is 32, so when need to convert upper case to lower case, add 32 in the upper case value and to convert from lower case to uppercase.
+
+Intuition-
+
+We iterate through our input String s as we build up our answer String str
+if the value of any character lies in that range ( A - Z ), we replace it with the character of value ch + 32 which corresponds to the lowercase version of the uppercase letter.
+else add it to String str without any change
+*/
+
+public class ToLowerCase {
+
+	public static String toLowerCase(String s) {
+        String str = "";
+        for (int i =0; i < s.length(); i++){
+             if(s.charAt(i)<='Z'&&s.charAt(i)>='A'){
+                str = str + Character.toString((char) (s.charAt(i)+32));
+            }else{
+                str = str + Character.toString(s.charAt(i));
+            }
+        }
+
+        return str;
+    }
+
+
+
+	public static void main(String[] args) {
+		String s = "Hello";
+		toLowerCase(s);
+
+}
+}
